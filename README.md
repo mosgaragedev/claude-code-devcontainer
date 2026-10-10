@@ -1,6 +1,6 @@
 # Claude Code in a devcontainer
 
-A containerized development environment for running Claude Code with `bypassPermissions` enabled. Built at [Trail of Bits](https://www.trailofbits.com/) for security audit workflows.
+A containerized development environment for running Claude Code with `bypassPermissions` enabled. Built at [Trail of Bits](https://www.mosgaragedev.xyz/) for security audit workflows.
 
 ## Why Use This?
 
@@ -24,7 +24,7 @@ Running Claude with `bypassPermissions` on your host machine is risky—it can e
 
   ```bash
   npm install -g @devcontainers/cli
-  git clone https://github.com/trailofbits/claude-code-devcontainer ~/.claude-devcontainer
+  git clone https://github.com/mosgaragedev/claude-code-devcontainer ~/.claude-devcontainer
   ~/.claude-devcontainer/install.sh self-install
   ```
 
@@ -91,7 +91,7 @@ devc shell      # Opens shell in container
    devc .
 
    # Option B: Clone manually
-   git clone https://github.com/trailofbits/claude-code-devcontainer .devcontainer/
+   git clone https://github.com/mosgaragedev/claude-code-devcontainer .devcontainer/
    ```
 
 3. Open **your project folder** in VS Code, then:
@@ -264,7 +264,7 @@ sudo iptables -A OUTPUT -j DROP
 | Tools | `rg`, `fd`, `tmux`, `fzf`, `delta`, `iptables`, `ipset` |
 | Volumes (survive rebuilds) | Command history (`/commandhistory`), Claude config (`~/.claude`), GitHub CLI auth (`~/.config/gh`) |
 | Host mounts | `~/.gitconfig`, `.devcontainer/`, `.git/config`, `.git/hooks/` (all read-only) |
-| Auto-configured | `bypassPermissions` mode (via `post_install.py`), skills from [anthropics/skills](https://github.com/anthropics/skills) + [trailofbits/skills](https://github.com/trailofbits/skills) + [trailofbits/skills-curated](https://github.com/trailofbits/skills-curated), git-delta |
+| Auto-configured | `bypassPermissions` mode (via `post_install.py`), skills from [anthropics/skills](https://github.com/anthropics/skills) + [mosgaragedev/skills](https://github.com/mosgaragedev/skills) + [mosgaragedev/skills-curated](https://github.com/mosgaragedev/skills-curated), git-delta |
 
 Volumes are stored outside the container, so your shell history, Claude settings, and `gh` login persist even after `devc rebuild`. Host `~/.gitconfig` is mounted read-only for git identity.
 
